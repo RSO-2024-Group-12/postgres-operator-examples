@@ -35,4 +35,5 @@ jobs:
 
       - name: Push chart to GHCR
         run: |
-          helm push postgrescluster-*.tgz oci://ghcr.io/${{ github.repository_owner }}
+          OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          helm push postgrescluster-*.tgz oci://ghcr.io/$OWNER
