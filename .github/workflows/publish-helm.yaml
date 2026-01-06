@@ -35,4 +35,4 @@ jobs:
 
       - name: Push chart to GHCR
         run: |
-          helm push postgrescluster-*.tgz oci://ghcr.io/${{ github.repository_owner }}/helm
+          helm push postgrescluster-*.tgz oci://ghcr.io/${{ github.repository_owner }}
