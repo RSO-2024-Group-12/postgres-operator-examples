@@ -3,7 +3,7 @@ name: Publish Helm Chart
 on:
   push:
     tags:
-      - 'chart-*'   # example: chart-myapp-0.1.0
+      - 'chart/postgres-v*'   # example: chart-myapp-0.1.0
 
 permissions:
   contents: read
@@ -36,4 +36,4 @@ jobs:
       - name: Push chart to GHCR
         run: |
           OWNER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-          helm push postgrescluster-*.tgz oci://ghcr.io/$OWNER
+          helm push postgrescluster-*.tgz oci://ghcr.io/$OWNER/charts
